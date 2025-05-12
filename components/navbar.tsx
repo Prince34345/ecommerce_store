@@ -2,8 +2,13 @@ import React from 'react'
 import Container from './ui/container'
 import Link from 'next/link'
 import MainNav from './mainnav'
+import getCategories from '@/actions/get-categories'
+import NavbarActions from './navbar-action'
 
-const Navbar = () => {
+export const revalidate = 0;
+
+const Navbar = async () => {
+  const categories = await getCategories()
   return (
     <header className='border-b-[.5px] border-neutral-500'>
       <Container>
@@ -11,7 +16,8 @@ const Navbar = () => {
         <Link href='/' className='ml-4 lg:ml-0 gap-x-2'>
            <p className='font-bold text-xl'>STORE</p>
         </Link>
-        <MainNav data={[]}/>
+        <MainNav data={categories}/>
+        <NavbarActions/>
         </div>
       </Container>
     </header>
