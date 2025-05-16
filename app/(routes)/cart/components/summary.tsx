@@ -8,7 +8,6 @@ import toast from "react-hot-toast";
 import Button from "@/components/ui/button";
 import CurrencyComponent from "@/components/ui/currency-component";
 import useCart from "@/hooks/use-cart";
-import { corsHeaders } from "@/lib/utils";
 
 const Summary = () => {
   const searchParams = useSearchParams();
@@ -47,7 +46,7 @@ const Summary = () => {
           <CurrencyComponent value={totalPrice} />
         </div>
       </div>
-      <Button onClick={onCheckout} className="w-full mt-6">
+      <Button disabled={cartItems.length === 0} onClick={onCheckout} className="w-full mt-6">
         Check Out
       </Button>
     </div>
