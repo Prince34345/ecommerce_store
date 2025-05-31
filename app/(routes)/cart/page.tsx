@@ -1,4 +1,5 @@
 "use client";
+
 import Container from '@/components/ui/container';
 import useCart from '@/hooks/use-cart';
 import {useEffect, useState} from 'react';
@@ -8,8 +9,8 @@ import Summary from './components/summary';
 
 
 const CartPage = () => {
-  const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
+  const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true)
   }, [])
@@ -39,5 +40,4 @@ const CartPage = () => {
     </div>
   )
 }
-
 export default CartPage

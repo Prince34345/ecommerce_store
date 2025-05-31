@@ -6,7 +6,7 @@ import Container from '@/components/ui/container'
 import React from 'react'
 
 export const revalidate = 0
-
+export const dynamic = 'force-dynamic';
 const Homepage = async () => {
   const products = await getProducts({isFeatured: true})
   const billboard = await getBillboard("350895ea-2c02-4dd9-98e2-c9ec2effd8a8");
@@ -19,8 +19,9 @@ const Homepage = async () => {
                  </div>
         </div>
     </Container>
-
   )
 }
+
+
 
 export default Homepage
